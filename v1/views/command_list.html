@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <title> Commands | List </title>
+  <link rel="stylesheet" type="text/css" href="/assets/css/style.css" />
+</head>
+<body>
+
+  <ul>
+    <li> <a href="/">Home</a> </li>
+  </ul>
+
+  <h2> Novo comando </h2>
+
+  <form method="POST" action="/commands">
+    <div> 
+      <label for="terminal">Selecione o terminal: </label><br />
+       <select name="terminal" id="terminal">
+         {{ range .Terminals }}
+         <option value="{{ .Id }}">{{ .Name }} </option>
+         {{ end }}
+       </select>
+    </div>
+     <div>
+       <label for="name">Nome do comando: </label><br/>
+        <input type="text" name="name" id="name" maxlength="100" required/>
+     </div>
+     <div>
+       <label for="description">Descrição: </label><br />
+        <textarea name="description" id="description" rows="5" cols="50" maxlength="255" required></textarea>
+     </div>
+
+
+     <div>
+       <button type="submit">Salvar </button>
+     </div>
+  </form>
+
+  {{if .DisplayTable }}
+  <h2>Lista de comandos </h2>
+  <table>
+    <th>Id</th>
+    <th>Nome</th>
+    <th>Descrição</th>
+    <th>Terminal</th>
+    {{ range .Commands }}
+      <tr>
+        <td>{{ .Id }}</td>
+        <td>{{ .Name }}</td>
+        <td>{{ .Description }}</td>
+        <td>{{ .Terminal.Name }}</td>
+      </tr>
+    {{ end }}
+  </table>
+  {{end}}
+</body>
+</html>

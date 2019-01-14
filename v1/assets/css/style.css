@@ -1,0 +1,18 @@
+table {
+    border-collapse: collapse;
+}
+
+table, th, tr, td {
+    border: 1px solid rgb(30, 30, 37);
+    padding: 10px;
+    font-family: 'monaco';
+}
+
+textarea {
+  resize: none;
+}
+
+select {
+    font-size: 18px;
+    font-family: 'monaco';
+}

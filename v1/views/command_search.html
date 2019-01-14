@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <title>Search | Commands </title>
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css" />
+  </head>
+  <body>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/commands">Comandos</a></li>
+    </ul>
+    <h2>Comandos encontrados com:  "{{ .Search }}"</h2>
+    <p> Resultados: {{ .Results }} </p>
+    {{ if (gt .Results 0) }}
+    <table>
+      <th>Comando</th>
+      <th>Descrição</th>
+      <th>Terminal</th>
+      {{ range .Commands}}
+      <tr>
+        <td>{{ .Name }}</td>
+        <td>{{ .Description }}</td>
+        <td>{{ .Terminal.Name }}</td>
+      </tr>
+      {{ end }}
+    </table>
+    {{ end }}
+  </body>
+</html>
