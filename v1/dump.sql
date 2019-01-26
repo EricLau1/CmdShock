@@ -7,6 +7,7 @@ insert into commands (name, description, terminal) values
 ('env','lista as variáveis de ambiente',1),
 ('printenv','lista as variáveis de ambiente',1),
 ('echo $RANDOM','retorna um número randômico
+
 ',1),
 ('pwd','retorna o diretório atual',1),
 ('> arquivo.ext','este comando cria um arquivo',1),
@@ -38,4 +39,15 @@ insert into commands (name, description, terminal) values
 ('date +%h','retorna o nome do mês atual',1),
 ('ls -la','lista todos arquivos e diretórios independente se for oculto ou não',1),
 ('echo "Hello world" > arquivo','sobreescreve o conteudo de um arquivo caso exista, com a mensagem',1),
-('wc < arquivo.txt','este comando recebe um arquivo e retorna a quantidade de linhas, de palavras e bytes.',1);
+('wc < arquivo.txt','este comando recebe um arquivo e retorna a quantidade de linhas, de palavras e bytes.',1),
+('soma=$[10 + 10]','cálculo de soma atribuído a uma variável',1),
+('mult=$[2 * 5]','cálculo de multiplicação atribuído a uma variável',1),
+('bc','calculadora do bash',1),
+('bc -q','entra na calculadora sem a mensagem inicial',1),
+('var=`echo "scale=2; 2/5" | bc`','concatena uma sequência de cálculos que são enviados para o "bc", que retorna para a variável o resultado da equação',1),
+('echo $?','retorna o status de saída do último comando',1),
+('if [comando]; then [comando1; comando2;...] fi','executa comandos a partir de lógicas condições. (Os colchetes são ilustrativos).',1),
+('cat arquivo','imprime o conteúdo do arquivo na tela',1),
+('file arquivo','imprime o tipo do arquivo',1),
+('if cd /xyz; then   echo "Diretório encontrado!"; else   echo "Diretório não existe!"; fi','condicional com else',1),
+('cat < arquivo1 > arquivo2','copia o conteúdo de um arquivo para outro.',1);
